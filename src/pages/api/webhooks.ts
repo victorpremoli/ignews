@@ -51,7 +51,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             const subscription = event.data.object as Stripe.Subscription;
 
             await saveSubscription(
-              subscription.id.toString(),
+              subscription.id,
               subscription.customer.toString(),
               false
               );
